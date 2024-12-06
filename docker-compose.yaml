@@ -1,0 +1,14 @@
+services:
+  whatsapp_api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5001:5001"
+    networks:
+      - whatsapp_api_network
+
+networks:
+  whatsapp_api_network:
+    driver: bridge
+      
