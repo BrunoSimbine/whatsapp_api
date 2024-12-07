@@ -45,7 +45,6 @@ public class MessageController : ControllerBase
     public async Task<ActionResult<bool>> SendMessage(Voucher voucher)
     {
         try {
-
             var result = await _messageService.SendVoucherAsync(voucher);
             return Ok(result);
         } catch (HttpRequestException ex) {
