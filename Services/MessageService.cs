@@ -29,7 +29,7 @@ public class MessageService : IMessageService
 
 *Package Name:* {voucher.ProductName}
 *Code:* {voucher.Code}
-*Amount of Data:* {voucher.DataAmount} GB
+*Amount of Data:* {voucher.DataAmount} MB
 *Validity*: {voucher.DurationDays} days
 *Price:* {voucher.ProductPrice} USDT
 ";
