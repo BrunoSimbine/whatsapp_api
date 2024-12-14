@@ -25,13 +25,14 @@ public class MessageService : IMessageService
 	}
 
 	public async Task<string> SendVoucherAsync(Voucher voucher) {
+		var code = $"{voucher.Code.Substring(0, 4)} {voucher.Code.Substring(4, 4)} {voucher.Code.Substring(8, 4)} {voucher.Code.Substring(12, 4)}";
 		var text = $@"Congratulations on your choice! Here are the details of your plan:
 
-*Package Name:* {voucher.ProductName}
-*Code:* {voucher.Code}
-*Amount of Data:* {voucher.DataAmount} MB
-*Validity*: {voucher.DurationDays} days
-*Price:* {voucher.ProductPrice} USDT
+*Package:* {voucher.ProductName}
+*Code:* {code}
+*Data:* {voucher.DataAmount} MB
+*Duration*: {voucher.DurationDays} days
+*Price:* ${voucher.ProductPrice}
 ";
 
 		string jsonData = JsonSerializer.Serialize(new MessageDto {
